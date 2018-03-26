@@ -66,7 +66,7 @@ void loop()
     busy_counter++;
   }
 
-  if (busy_counter > ((15 * 60 * 1000) / 250) ) // 15 min
+  if (busy_counter > 3600 ) // ((15 * 60 * 1000) / 250) 15 min
   {
     mp3.sleep();
     digitalWrite(POWER_PIN, LOW);
