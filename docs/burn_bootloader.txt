@@ -1,0 +1,6 @@
+- Open Arduino IDE
+- Connect the Uno to the PC
+- Change the board: Tools Menu -> Board ->Arduino Pro or Pro Mini
+- Check the speed and processor: Tools Menu -> Processor -> ATmega328 (5V, 16MHz)
+- Choose the programmer> Tools Menu -> Programmer -> Arduino as ISP
+- Burn the bootloader: Tools Menu -> Burn Bootloader
