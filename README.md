@@ -10,3 +10,12 @@ Plastic cover I bought in electric shop and I drilled all holes for buttons, led
 Schematic
 ---------
 ![Music player schematic](/pictures/schematic_bb.png?raw=true "Music player schematic")
+
+Photos smaller version
+----------------------
+![Music player photo small 1](/pictures/20180411_214104.jpg?raw=true "Music player photo small")
+![Music player photo small 2](/pictures/20180409_231628.jpg?raw=true "Music player photo small")
+
+Schematic for smaller version
+-----------------------------
+![Music player schematic small version](/pictures/schematic_small_bb.png?raw=true "Music player schematic small")
