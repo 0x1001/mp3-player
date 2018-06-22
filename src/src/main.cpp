@@ -34,13 +34,11 @@ long busy_counter = 0;
 void setup()
 {
   mp3.begin();
-  delay(200);
-  mp3.setVolume(0);
   pinMode(BUSY_PIN, INPUT);
   pinMode(POWER_PIN, OUTPUT);
+  delay(500);
+  mp3.setVolume(0);
 }
-
-int last_volume = 0;
 
 void loop()
 {
@@ -50,12 +48,12 @@ void loop()
   digitalWrite(POWER_PIN, HIGH);
 
   potentiometer = analogRead(POTENTIOMETER); //0 - 1023
-  volume = (int)(((float)potentiometer - 0.0)*(30.0 - 0.0)/(1023.0 - 0.0) + 0.0);
-  if (last_volume != volume)
-  {
-      mp3.setVolume(volume); //0 - 30
-      last_volume = volume;
-  }
+
+  // Speaker to powerful, setting max volume to 20. DFMiniMp3 volume range is 0 - 30.
+  //volume = (int)(((float)potentiometer - 0.0)*(30.0 - 0.0)/(1023.0 - 0.0) + 0.0);
+  volume = (int)(((float)potentiometer - 0.0)*(20.0 - 0.0)/(1023.0 - 0.0) + 0.0);
+
+  mp3.setVolume(volume);
 
   if (digitalRead(BUSY_PIN) == 0)
   {
@@ -66,7 +64,7 @@ void loop()
     busy_counter++;
   }
 
-  if (busy_counter > 3600 ) // ((15 * 60 * 1000) / 250) 15 min
+  if (busy_counter > 1200 ) // ((5 * 60 * 1000) / 250) 5 min
   {
     mp3.sleep();
     digitalWrite(POWER_PIN, LOW);
